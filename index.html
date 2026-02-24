@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Два языка — один мир • Якутия • 3 праздника</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f7f3ed;
+            color: #2c3e4f;
+            scroll-behavior: smooth;
+        }
+
+        /* общая обёртка */
+        .presentation {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* заголовок проекта */
+        .hero {
+            text-align: center;
+            padding: 70px 20px 50px;
+            background: radial-gradient(circle at 30% 30%, #fff3e0, #f5e3ce);
+            border-radius: 100px 100px 40px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 35px -15px #a48d78;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            background: linear-gradient(145deg, #8b3f1b, #2c5f7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 1.8rem;
+            color: #4e3e30;
+            margin-top: 15px;
+        }
+        .hero .lang-loop {
+            margin: 25px 0 15px;
+        }
+        .lang-loop span {
+            display: inline-block;
+            background: white;
+            padding: 10px 35px;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 10px;
+            box-shadow: 0 6px 0 #b68d6b;
+        }
+
+        /* навигация-лента */
+        .topic-strip {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin: 30px 0 50px;
+        }
+        .topic-strip a {
+            padding: 15px 40px;
+            background: #faeadc;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #2f4156;
+            box-shadow: 0 8px 0 #af8b6b;
+            transition: 0.15s;
+            border: 2px solid #fff8f0;
+        }
+        .topic-strip a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 0 #8f6747;
+        }
+        .topic-strip a:active {
+            transform: translateY(3px);
+            box-shadow: 0 5px 0 #8f6747;
+        }
+
+        /* универсальный блок темы */
+        .theme-block {
+            border-radius: 90px 90px 50px 50px;
+            padding: 50px 45px;
+            margin-bottom: 70px;
+            box-shadow: 0 30px 40px -20px #4c3f33;
+            transition: transform 0.3s;
+        }
+        .theme-block:hover {
+            transform: scale(1.01);
+        }
+
+        /* индивидуальные фоны тем */
+        .march-bg {
+            background: linear-gradient(125deg, #ffefef, #ffe1e6, #ffd9e8);
+            border: 4px solid #ffb7c5;
+        }
+        .maslen-bg {
+            background: linear-gradient(125deg, #fde9ce, #fed8b1, #ffcf9c);
+            border: 4px solid #f5b784;
+        }
+        .arctic-bg {
+            background: linear-gradient(125deg, #d2ebf5, #c2e2f0, #b4d9ec);
+            border: 4px solid #87b9d0;
+        }
+
+        .theme-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border-bottom: 5px double #bc8f6b;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .theme-title i {
+            font-size: 3.8rem;
+            color: #b95f33;
+        }
+
+        /* описание двух колонок */
+        .desc-double {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            margin: 30px 0 40px;
+        }
+        .desc-card {
+            background: rgba(255, 255, 250, 0.75);
+            backdrop-filter: blur(6px);
+            padding: 35px 30px;
+            border-radius: 60px;
+            box-shadow: inset 0 1px 5px #fff6ea, 0 15px 20px -15px #856e58;
+        }
+        .desc-card h3 {
+            font-size: 2rem;
+            color: #6f4f37;
+            border-left: 8px solid #c3845c;
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        .desc-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* блок карточек слов */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 30px;
+            margin: 50px 0 40px;
+        }
+        .word-card {
+            background: #ffffffdb;
+            border-radius: 40px;
+            padding: 25px 10px;
+            text-align: center;
+            box-shadow: 0 15px 0 #a48162;
+            border: 2px solid #ffead8;
+            transition: 0.2s;
+        }
+        .word-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 0 #836446;
+        }
+        .ru-word {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #954f2b;
+        }
+        .sah-word {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #136f8c;
+            margin-top: 10px;
+            border-top: 3px dotted #e5b891;
+            padding-top: 12px;
+        }
+        .word-desc {
+            font-size: 1rem;
+            opacity: 0.75;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* контейнер для игр (разные) */
+        .game-zone {
+            background: #fffcf5e5;
+            border-radius: 70px;
+            padding: 40px 30px;
+            margin: 50px 0 20px;
+            box-shadow: 0 20px 30px -15px #6b5949, inset 0 0 0 2px #fad6b3;
+        }
+        .game-header {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .game-header i {
+            background: #c0946f;
+            color: white;
+            border-radius: 50%;
+            padding: 18px;
+        }
+
+        /* игра-клик (стандартная пара) */
+        .match-row {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .match-col {
+            flex: 1 1 250px;
+            background: #faead8;
+            border-radius: 50px;
+            padding: 20px;
+            box-shadow: 0 10px 0 #ac8b6b;
+        }
+        .match-card {
+            background: white;
+            border: 2px solid #d4a57e;
+            border-radius: 40px;
+            padding: 16px 10px;
+            margin: 10px 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.1s;
+            box-shadow: 0 4px 0 #b48b66;
+        }
+        .match-card.selected {
+            background: #f1cfb5;
+            border: 4px solid #b45f2b;
+            box-shadow: 0 5px 0 #7b532e;
+            transform: scale(1.02);
+        }
+        .match-card.matched {
+            background: #bde0d1;
+            border-color: #2b7a5a;
+            opacity: 0.6;
+            text-decoration: line-through 3px #196149;
+            pointer-events: none;
+            box-shadow: 0 2px 0 #166646;
+        }
+
+        /* игра "найди лишнее" */
+        .odd-game {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .odd-card {
+            background: #f5e3d1;
+            padding: 25px;
+            border-radius: 40px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            width: 160px;
+            text-align: center;
+            cursor: pointer;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 0 #9f8269;
+            transition: 0.1s;
+        }
+        .odd-card.selected-wrong {
+            background: #f3b9b9;
+            box-shadow: 0 5px 0 #a15151;
+            opacity: 0.7;
+        }
+        .odd-card.correct-odd {
+            background: #b1d6b1;
+            box-shadow: 0 5px 0 #3f8743;
+            border: 3px solid gold;
+        }
+
+        /* игра "сортировка" */
+        .sort-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .sort-category {
+            background: #ecdcc9;
+            border-radius: 50px;
+            padding: 25px;
+            min-width: 200px;
+            text-align: center;
+        }
+        .sort-category h4 {
+            font-size: 1.8rem;
+            background: white;
+            border-radius: 40px;
+            padding: 10px;
+        }
+        .sort-word {
+            background: #f3e1d1;
+            border-radius: 40px;
+            padding: 12px 15px;
+            margin: 10px 0;
+            cursor: grab;
+            font-weight: 600;
+            border: 2px solid #c5956e;
+        }
+        .sort-word.dropped {
+            background: #c9e0d6;
+            border: 3px solid #32825d;
+            cursor: default;
+        }
+
+        .game-message {
+            font-size: 1.5rem;
+            background: #ebd4bf;
+            padding: 20px;
+            border-radius: 50px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .reset-btn {
+            background: #c09b7a;
+            border: none;
+            color: white;
+            padding: 12px 35px;
+            font-size: 1.3rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 6px 0 #755c44;
+            margin-top: 20px;
+            border: 2px solid #ffc9a2;
+        }
+        .reset-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #755c44;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #594e44;
+        }
+
+        @media (max-width: 750px) {
+            .hero h1 { font-size: 3.2rem; }
+            .desc-double { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="presentation">
+
+    <!-- ГЕРО -->
+    <div class="hero">
+        <h1>Два языка — один мир</h1>
+        <p>Русский · Саха тыла</p>
+        <div class="lang-loop">
+            <span>🌸</span><span>🥞</span><span>❄️</span>
+        </div>
+        <div style="margin-top: 20px; font-size: 1.4rem;">путешествие по праздникам Якутии и России</div>
+    </div>
+
+    <!-- НАВИГАЦИЯ -->
+    <div class="topic-strip">
+        <a href="#march8">🌸 8 марта</a>
+        <a href="#maslen">🥞 Масленица</a>
+        <a href="#arctic">❄️ День Арктики</a>
+    </div>
+
+    <!-- ================= БЛОК 1: 8 МАРТА ================= -->
+    <div id="march8" class="theme-block march-bg">
+        <div class="theme-title"><i class="fas fa-calendar-heart"></i> 8 марта — День весенний</div>
+        <!-- описание -->
+        <div class="desc-double">
+            <div class="desc-card"><h3>🇷🇺 русский</h3><p>8 марта — праздник цветов, улыбок и благодарности женщинам. В Якутии дарят тюльпаны, открытки и тёплые слова мамам, бабушкам, подругам. Весна приходит даже в самый холодный край.</p></div>
+            <div class="desc-card"><h3>саха тыла</h3><p>Кулун тутар 8 күнэ — ийэлэр, дьахталлар күннэрэ. Сибэккилэр, бэлэхтэр, истиҥ тыллар — бу күн анал бэлиэтэ. Саас кэлбитин курдук, дьиэ-уот сылыйар.</p></div>
+        </div>
+        <!-- карточки слов -->
+        <div class="word-grid">
+            <div class="word-card"><div class="ru-word">Мама</div><div class="sah-word">Ийэ</div><div class="word-desc">первое слово</div></div>
+            <div class="word-card"><div class="ru-word">Бабушка</div><div class="sah-word">Эбээ</div><div class="word-desc">теплая забота</div></div>
+            <div class="word-card"><div class="ru-word">Подруга</div><div class="sah-word">Дьүөгэ</div><div class="word-desc">близкая душа</div></div>
+            <div class="word-card"><div class="ru-word">Тюльпан</div><div class="sah-word">тюльпан</div><div class="word-desc">весенний цветок</div></div>
+            <div class="word-card"><div class="ru-word">Красота</div><div class="sah-word">Кэрэ</div><div class="word-desc">главное качество</div></div>
+        </div>
+
+        <!-- интерактивная игра 1: классическое сопоставление -->
+        <div class="game-zone" id="gameMarch">
+            <div class="game-header"><i class="fas fa-puzzle-piece"></i> Игра «Найди пару» (8 марта)</div>
+            <div id="marchGame"></div>
+        </div>
+    </div>
+
+    <!-- ================= БЛОК 2: МАСЛЕНИЦА ================= -->
+    <div id="maslen" class="theme-block maslen-bg">
+        <div class="theme-title"><i class="fas fa-sun"></i> Масленица — солнцеворот</div>
+        <div class="desc-double">
+            <div class="desc-card"><h3>🇷🇺 русский</h3><p>Масленица — проводы зимы, весёлые гулянья и блины. Символ солнца, тепла и обновления. В Якутии тоже пекут блины, встречают гостей и радуются приближению весны.</p></div>
+            <div class="desc-card"><h3>саха тыла</h3><p>Масленица — кыс ууһуута, күнү айхаллааһын. Блиннар — күн табаарыга. Дьон көрс-көлө буолар, алаадьы астыыр, ырыа-той көтөҕүллэр.</p></div>
+        </div>
+        <div class="word-grid">
+            <div class="word-card"><div class="ru-word">Блин</div><div class="sah-word">блин (алаадьы)</div><div class="word-desc">солнечный круг</div></div>
+            <div class="word-card"><div class="ru-word">Солнце</div><div class="sah-word">Күн</div><div class="word-desc">свет и тепло</div></div>
+            <div class="word-card"><div class="ru-word">Масло</div><div class="sah-word">Арыы</div><div class="word-desc">для блинов</div></div>
+            <div class="word-card"><div class="ru-word">Чучело</div><div class="sah-word">куукула</div><div class="word-desc">сжигают зиму</div></div>
+            <div class="word-card"><div class="ru-word">Хоровод</div><div class="sah-word">үөрэ-көтө</div><div class="word-desc">дружный круг</div></div>
+        </div>
+
+        <!-- игра 2: Найди лишнее (четвёртый лишний) -->
+        <div class="game-zone" id="gameMaslen">
+            <div class="game-header"><i class="fas fa-smile"></i> Игра «Четвёртый лишний» (Масленица)</div>
+            <div id="maslenGame"></div>
+        </div>
+    </div>
+
+    <!-- ================= БЛОК 3: ДЕНЬ АРКТИКИ ================= -->
+    <div id="arctic" class="theme-block arctic-bg">
+        <div class="theme-title"><i class="fas fa-snowflake"></i> День Арктики — гордость севера</div>
+        <div class="desc-double">
+            <div class="desc-card"><h3>🇷🇺 русский</h3><p>День Арктики (28 февраля) посвящён природе и культуре полярных регионов. Якутия — часть Арктики, земля оленеводов, тайги и тундры.</p></div>
+            <div class="desc-card"><h3>саха тыла</h3><p>Арктика күнэ — хоту дойду уратытын ахтар күн. Саха сирэ — тайҕа, туундара, табаһыттар дойдулара. Бу күн Арктиканы чочуйаллар.</p></div>
+        </div>
+        <div class="word-grid">
+            <div class="word-card"><div class="ru-word">Север</div><div class="sah-word">Хоту</div><div class="word-desc">сторона света</div></div>
+            <div class="word-card"><div class="ru-word">Снег</div><div class="sah-word">Хаар</div><div class="word-desc">белый покров</div></div>
+            <div class="word-card"><div class="ru-word">Олень</div><div class="sah-word">Таба</div><div class="word-desc">северный друг</div></div>
+            <div class="word-card"><div class="ru-word">Чум</div><div class="sah-word">Ураһа</div><div class="word-desc">жилище</div></div>
+            <div class="word-card"><div class="ru-word">Мороз</div><div class="sah-word">Тымныы</div><div class="word-desc">суровый холод</div></div>
+        </div>
+
+        <!-- игра 3: Сортировка по категориям (животные/природа) -->
+        <div class="game-zone" id="gameArctic">
+            <div class="game-header"><i class="fas fa-igloo"></i> Игра «Сортировка» (Арктика)</div>
+            <div id="arcticGame"></div>
+        </div>
+    </div>
+
+    <footer>
+        🌍 Два языка — один мир · Саха · русский · 2026<br>
+        <i class="fas fa-heart" style="color:#b45f2b;"></i> три праздника — три игры
+    </footer>
+</div>
+
+<!-- ========== СКРИПТЫ ТРЁХ РАЗНЫХ ИГР ========== -->
+<script>
+    (function() {
+        // --------------------------------------------------------------
+        // 1. Игра для 8 марта — классический matching
+        function initMarchGame(containerId, pairs) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+
+            let selectedRu = null, selectedRuEl = null;
+            let matched = 0;
+
+            const ruWords = pairs.map(p => p.ru).sort(() => Math.random() - 0.5);
+            const sahWords = pairs.map(p => p.sah).sort(() => Math.random() - 0.5);
+
+            const row = document.createElement('div'); row.className = 'match-row';
+
+            // колонка русских
+            const colRu = document.createElement('div'); colRu.className = 'match-col';
+            colRu.innerHTML = '<h4 style="text-align:center;">🇷🇺 Русский</h4>';
+            ruWords.forEach(w => {
+                const card = document.createElement('div');
+                card.className = 'match-card';
+                card.textContent = w;
+                card.dataset.ru = w;
+                card.onclick = () => {
+                    if (card.classList.contains('matched')) return;
+                    if (selectedRuEl) selectedRuEl.classList.remove('selected');
+                    card.classList.add('selected');
+                    selectedRuEl = card;
+                    selectedRu = w;
+                    showMsg('Выбери якутское слово...');
+                };
+                colRu.appendChild(card);
+            });
+            // колонка якутских
+            const colSah = document.createElement('div'); colSah.className = 'match-col';
+            colSah.innerHTML = '<h4 style="text-align:center;">Саха тыла</h4>';
+            sahWords.forEach(w => {
+                const card = document.createElement('div');
+                card.className = 'match-card';
+                card.textContent = w;
+                card.dataset.sah = w;
+                card.onclick = () => {
+                    if (card.classList.contains('matched')) return;
+                    if (!selectedRu) { showMsg('Сначала выбери русское слово!'); return; }
+                    const pair = pairs.find(p => p.ru === selectedRu);
+                    if (pair && pair.sah === w) {
+                        card.classList.add('matched');
+                        if (selectedRuEl) selectedRuEl.classList.add('matched');
+                        matched++;
+                        showMsg('✅ Верно!');
+                        if (matched === pairs.length) showMsg('🎉 Ты выиграл(а)! Молодец!');
+                        if (selectedRuEl) selectedRuEl.classList.remove('selected');
+                        selectedRu = null; selectedRuEl = null;
+                    } else {
+                        showMsg('❌ Неправильно, попробуй снова');
+                        if (selectedRuEl) selectedRuEl.classList.remove('selected');
+                        selectedRu = null; selectedRuEl = null;
+                    }
+                };
+                colSah.appendChild(card);
+            });
+
+            row.appendChild(colRu); row.appendChild(colSah);
+            container.appendChild(row);
+
+            const msgDiv = document.createElement('div'); msgDiv.className = 'game-message';
+            container.appendChild(msgDiv);
+            const resetBtn = document.createElement('button'); resetBtn.className = 'reset-btn';
+            resetBtn.innerHTML = '<i class="fas fa-undo-alt"></i> Заново';
+            resetBtn.onclick = () => initMarchGame(containerId, pairs);
+            container.appendChild(resetBtn);
+
+            function showMsg(t) { msgDiv.textContent = t; }
+        }
+
+        // --------------------------------------------------------------
+        // 2. Игра для Масленицы — «Четвёртый лишний»
+        function initMaslenGame(containerId, groups) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+
+            let currentGroup = { ...groups[0] }; // начинаем с первой группы
+            let groupIndex = 0;
+            let message = '';
+
+            function renderGroup() {
+                container.innerHTML = '';
+                const desc = document.createElement('h3'); 
+                desc.textContent = `Найди лишнее слово (группа ${groupIndex+1}/${groups.length})`;
+                container.appendChild(desc);
+
+                const cardsDiv = document.createElement('div'); cardsDiv.className = 'odd-game';
+                const words = currentGroup.words;
+                const oddWord = currentGroup.odd;
+
+                words.sort(() => Math.random() - 0.5).forEach(w => {
+                    const card = document.createElement('div'); card.className = 'odd-card';
+                    card.textContent = w;
+                    card.onclick = () => {
+                        if (card.classList.contains('correct-odd') || card.classList.contains('selected-wrong')) return;
+                        if (w === oddWord) {
+                            card.classList.add('correct-odd');
+                            message = '✅ Правильно! Это лишнее.';
+                            if (groupIndex + 1 < groups.length) {
+                                groupIndex++;
+                                currentGroup = groups[groupIndex];
+                                renderGroup();
+                            } else {
+                                message = '🎉 Поздравляем! Ты прошёл все задания!';
+                                msgDiv.textContent = message;
+                            }
+                        } else {
+                            card.classList.add('selected-wrong');
+                            message = '❌ Неверно. Попробуй другое слово.';
+                        }
+                        msgDiv.textContent = message;
+                    };
+                    cardsDiv.appendChild(card);
+                });
+                container.appendChild(cardsDiv);
+                const msgDiv = document.createElement('div'); msgDiv.className = 'game-message';
+                container.appendChild(msgDiv);
+                msgDiv.textContent = message;
+                const resetBtn = document.createElement('button'); resetBtn.className = 'reset-btn';
+                resetBtn.innerHTML = '🔄 Сначала';
+                resetBtn.onclick = () => { groupIndex = 0; currentGroup = groups[0]; renderGroup(); };
+                container.appendChild(resetBtn);
+            }
+            renderGroup();
+        }
+
+        // --------------------------------------------------------------
+        // 3. Игра для Арктики — сортировка (животные / природа)
+        function initArcticGame(containerId, items) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+
+            let animals = items.filter(i => i.cat === 'animal').map(i => i.word);
+            let nature = items.filter(i => i.cat === 'nature').map(i => i.word);
+            let allWords = [...animals, ...nature].sort(() => Math.random() - 0.5);
+
+            let matched = 0; const total = allWords.length;
+
+            const grid = document.createElement('div'); grid.className = 'sort-grid';
+
+            // колонка Животные
+            const colA = document.createElement('div'); colA.className = 'sort-category';
+            colA.innerHTML = '<h4>🐻 Животные</h4><div id="animalsDrop" style="min-height:150px;"></div>';
+            // колонка Природа
+            const colN = document.createElement('div'); colN.className = 'sort-category';
+            colN.innerHTML = '<h4>❄️ Природа</h4><div id="natureDrop" style="min-height:150px;"></div>';
+
+            // контейнер для слов внизу
+            const bankDiv = document.createElement('div'); bankDiv.className = 'odd-game';
+            bankDiv.style.marginTop = '30px';
+            allWords.forEach(w => {
+                const card = document.createElement('div'); card.className = 'sort-word';
+                card.textContent = w;
+                card.dataset.word = w;
+                card.onclick = (e) => {
+                    if (card.classList.contains('dropped')) return;
+                    const cat = items.find(i => i.word === w).cat;
+                    let targetBox = (cat === 'animal') ? document.getElementById('animalsDrop') : document.getElementById('natureDrop');
+                    if (targetBox.childElementCount < (cat==='animal'? animals.length : nature.length)) {
+                        card.classList.add('dropped');
+                        targetBox.appendChild(card); // перемещаем
+                        matched++;
+                        if (matched === total) msgDiv.textContent = '🎉 Супер! Всё правильно!';
+                    } else {
+                        msgDiv.textContent = '❌ Ошибка: в этой категории уже достаточно слов';
+                    }
+                };
+                bankDiv.appendChild(card);
+            });
+
+            grid.appendChild(colA); grid.appendChild(colN);
+            container.appendChild(grid);
+            container.appendChild(bankDiv);
+
+            const msgDiv = document.createElement('div'); msgDiv.className = 'game-message';
+            container.appendChild(msgDiv);
+            const resetBtn = document.createElement('button'); resetBtn.className = 'reset-btn';
+            resetBtn.innerHTML = '🔄 Перемешать';
+            resetBtn.onclick = () => initArcticGame(containerId, items);
+            container.appendChild(resetBtn);
+        }
+
+        // ========== ЗАПУСК ==========
+        window.onload = function() {
+            // март
+            initMarchGame('marchGame', [
+                { ru: 'Мама', sah: 'Ийэ' },
+                { ru: 'Бабушка', sah: 'Эбээ' },
+                { ru: 'Подруга', sah: 'Дьүөгэ' },
+                { ru: 'Цветок', sah: 'Сибэкки' },
+                { ru: 'Красота', sah: 'Кэрэ' }
+            ]);
+
+            // масленица (группы для "лишнего")
+            initMaslenGame('maslenGame', [
+                { words: ['Блин', 'Масло', 'Солнце', 'Чучело'], odd: 'Чучело' },
+                { words: ['Снег', 'Санки', 'Хоровод', 'Тюльпан'], odd: 'Тюльпан' }
+            ]);
+
+            // арктика
+            initArcticGame('arcticGame', [
+                { word: 'Олень', cat: 'animal' },
+                { word: 'Песец', cat: 'animal' },
+                { word: 'Морж', cat: 'animal' },
+                { word: 'Снег', cat: 'nature' },
+                { word: 'Лёд', cat: 'nature' },
+                { word: 'Вьюга', cat: 'nature' }
+            ]);
+        };
+    })();
+</script>
+</body>
+</html>

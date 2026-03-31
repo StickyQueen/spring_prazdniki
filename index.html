@@ -23,14 +23,12 @@
             scroll-behavior: smooth;
         }
 
-        /* общая обёртка */
         .presentation {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* заголовок проекта */
         .hero {
             text-align: center;
             padding: 70px 20px 50px;
@@ -66,7 +64,6 @@
             box-shadow: 0 6px 0 #b68d6b;
         }
 
-        /* навигация-лента */
         .topic-strip {
             display: flex;
             justify-content: center;
@@ -95,7 +92,6 @@
             box-shadow: 0 5px 0 #8f6747;
         }
 
-        /* универсальный блок темы */
         .theme-block {
             border-radius: 90px 90px 50px 50px;
             padding: 50px 45px;
@@ -107,7 +103,6 @@
             transform: scale(1.01);
         }
 
-        /* индивидуальные фоны тем */
         .march-bg {
             background: linear-gradient(125deg, #ffefef, #ffe1e6, #ffd9e8);
             border: 4px solid #ffb7c5;
@@ -136,7 +131,6 @@
             color: #b95f33;
         }
 
-        /* описание двух колонок */
         .desc-double {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -160,9 +154,9 @@
         .desc-card p {
             font-size: 1.2rem;
             line-height: 1.6;
+            white-space: pre-line;
         }
 
-        /* блок карточек слов */
         .word-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -202,7 +196,6 @@
             font-style: italic;
         }
 
-        /* контейнер для игр (разные) */
         .game-zone {
             background: #fffcf5e5;
             border-radius: 70px;
@@ -225,7 +218,6 @@
             padding: 18px;
         }
 
-        /* игра-клик (стандартная пара) */
         .match-row {
             display: flex;
             gap: 40px;
@@ -267,7 +259,6 @@
             box-shadow: 0 2px 0 #166646;
         }
 
-        /* игра "найди лишнее" */
         .odd-game {
             display: flex;
             flex-wrap: wrap;
@@ -298,7 +289,6 @@
             border: 3px solid gold;
         }
 
-        /* игра "сортировка" */
         .sort-grid {
             display: flex;
             flex-wrap: wrap;
@@ -394,12 +384,10 @@
     <!-- ================= БЛОК 1: 8 МАРТА ================= -->
     <div id="march8" class="theme-block march-bg">
         <div class="theme-title"><i class="fas fa-calendar-heart"></i> 8 марта — День весенний</div>
-        <!-- описание -->
         <div class="desc-double">
-            <div class="desc-card"><h3>🇷🇺 русский</h3><p>8 марта — праздник цветов, улыбок и благодарности женщинам. В Якутии дарят тюльпаны, открытки и тёплые слова мамам, бабушкам, подругам. Весна приходит даже в самый холодный край.</p></div>
-            <div class="desc-card"><h3>саха тыла</h3><p>Кулун тутар 8 күнэ — ийэлэр, дьахталлар күннэрэ. Сибэккилэр, бэлэхтэр, истиҥ тыллар — бу күн анал бэлиэтэ. Саас кэлбитин курдук, дьиэ-уот сылыйар.</p></div>
+            <div class="desc-card"><h3>🇷🇺 русский</h3><p>8 марта — праздник цветов, улыбок и благодарности женщинам. В Якутии дарят тюльпаны, открытки и тёплые слова мамам, бабушкам, подругам. Весна приходит даже в самый холодный край. Этот день наполняется особой атмосферой заботы и внимания, когда хочется сказать самые важные слова и подарить частичку тепла близким. Несмотря на морозы, в сердцах людей уже чувствуется приближение солнечных дней и обновления природы.</p></div>
+            <div class="desc-card"><h3>саха тыла</h3><p>Кулун тутар 8 күнэ - сибэкки, мичээр, дьахталларга махтал бырааһынньыга. Саха сиригэр ийэлэргэ, эбэлэргэ уонна дьүөгэлэргэ тюльпан, открытка уонна махтал бэлэхтииллэр. Олус тымныы сиргэ эмиэ саас кэлэр. Үтүө тыллары этиэххин уонна чугас дьоҥҥор сылааһы бэлэхтиэххин баҕарар эйгэлээх күн. Төһө да тымныы буоллар, дьон сүрэҕэр куйаас күннэр чугаһааһыыта, айылҕа саҥардыыта эрдэттэн биллэр.</p></div>
         </div>
-        <!-- карточки слов -->
         <div class="word-grid">
             <div class="word-card"><div class="ru-word">Мама</div><div class="sah-word">Ийэ</div><div class="word-desc">первое слово</div></div>
             <div class="word-card"><div class="ru-word">Бабушка</div><div class="sah-word">Эбээ</div><div class="word-desc">теплая забота</div></div>
@@ -407,20 +395,18 @@
             <div class="word-card"><div class="ru-word">Тюльпан</div><div class="sah-word">тюльпан</div><div class="word-desc">весенний цветок</div></div>
             <div class="word-card"><div class="ru-word">Красота</div><div class="sah-word">Кэрэ</div><div class="word-desc">главное качество</div></div>
         </div>
-
-        <!-- интерактивная игра 1: классическое сопоставление -->
         <div class="game-zone" id="gameMarch">
             <div class="game-header"><i class="fas fa-puzzle-piece"></i> Игра «Найди пару» (8 марта)</div>
             <div id="marchGame"></div>
         </div>
     </div>
 
-    <!-- ================= БЛОК 2: МАСЛЕНИЦА ================= -->
+    <!-- ================= БЛОК 2: МАСЛЕНИЦА (ИСПРАВЛЕНА ИГРА) ================= -->
     <div id="maslen" class="theme-block maslen-bg">
         <div class="theme-title"><i class="fas fa-sun"></i> Масленица — солнцеворот</div>
         <div class="desc-double">
-            <div class="desc-card"><h3>🇷🇺 русский</h3><p>Масленица — проводы зимы, весёлые гулянья и блины. Символ солнца, тепла и обновления. В Якутии тоже пекут блины, встречают гостей и радуются приближению весны.</p></div>
-            <div class="desc-card"><h3>саха тыла</h3><p>Масленица — кыс ууһуута, күнү айхаллааһын. Блиннар — күн табаарыга. Дьон көрс-көлө буолар, алаадьы астыыр, ырыа-той көтөҕүллэр.</p></div>
+            <div class="desc-card"><h3>🇷🇺 русский</h3><p>Масленица — проводы зимы, весёлые гулянья и блины. Символ солнца, тепла и обновления. В Якутии тоже пекут блины, встречают гостей и радуются приближению весны. На площадях проходят игры, конкурсы и народные забавы, звучит музыка и смех. Люди собираются вместе, чтобы проводить долгую зиму и с надеждой встретить весну, делясь угощениями и хорошим настроением.</p></div>
+            <div class="desc-card"><h3>саха тыла</h3><p>Масленица диэн кыһыны кытта быраһаайдаһыы, үөрүүлээх бырааһынньык уонна блины кэмэ. Күн, сылаас уонна саас кэлиитин көрдөрөр. Саха сиригэр дьон эмиэ блины буһарар, ыалдьыттыыр уонна саас кэлиитигэр үөрэр. Оонньуулар, күрэхтэһиилэр, норуот сынньалаҥнара болуоссакка ыытыллаллар, музыка уонна күлүү-элэк доҕуһуолланаллар. Дьон уһун кыһыны кытта быраһаайдаһа мусталлар уонна сааскы эрэллээхтик көрсөллөр, минньигэс астары уонна үчүгэй санааны үллэстэллэр.</p></div>
         </div>
         <div class="word-grid">
             <div class="word-card"><div class="ru-word">Блин</div><div class="sah-word">блин (алаадьы)</div><div class="word-desc">солнечный круг</div></div>
@@ -430,7 +416,7 @@
             <div class="word-card"><div class="ru-word">Хоровод</div><div class="sah-word">үөрэ-көтө</div><div class="word-desc">дружный круг</div></div>
         </div>
 
-        <!-- игра 2: Найди лишнее (четвёртый лишний) -->
+        <!-- ИГРА 2: Найди лишнее (исправлена: 4 задания) -->
         <div class="game-zone" id="gameMaslen">
             <div class="game-header"><i class="fas fa-smile"></i> Игра «Четвёртый лишний» (Масленица)</div>
             <div id="maslenGame"></div>
@@ -441,8 +427,8 @@
     <div id="arctic" class="theme-block arctic-bg">
         <div class="theme-title"><i class="fas fa-snowflake"></i> День Арктики — гордость севера</div>
         <div class="desc-double">
-            <div class="desc-card"><h3>🇷🇺 русский</h3><p>День Арктики (28 февраля) посвящён природе и культуре полярных регионов. Якутия — часть Арктики, земля оленеводов, тайги и тундры.</p></div>
-            <div class="desc-card"><h3>саха тыла</h3><p>Арктика күнэ — хоту дойду уратытын ахтар күн. Саха сирэ — тайҕа, туундара, табаһыттар дойдулара. Бу күн Арктиканы чочуйаллар.</p></div>
+            <div class="desc-card"><h3>🇷🇺 русский</h3><p>День Арктики (28 февраля) посвящён природе и культуре полярных регионов. Якутия — часть Арктики, земля оленеводов, тайги и тундры. Этот день напоминает о хрупкости северной природы и важности её сохранения. Он объединяет людей, живущих в суровых условиях, и тех, кто изучает и защищает Арктику, вдохновляя на бережное отношение к уникальному миру Севера.</p></div>
+            <div class="desc-card"><h3>саха тыла</h3><p>Арктика күнэ (олунньу 28 күнэ) полярнай регионнар айылҕаларыгар уонна култуураларыгар ананар. Саха сирэ Арктика чааһа – табаһыттар, тайҕа уонна туундара сирэ. Бу күн хотугу айылҕа мөлтөҕүн уонна ону харыстыыр суолталааҕын санатар. Ыарахан усулуобуйаҕа олорор дьону уонна Арктиканы үөрэтэр, харыстыыр дьону түмэр, Хоту дойду ураты эйгэтигэр кыһамньылаах сыһыаны үөскэтэр.</p></div>
         </div>
         <div class="word-grid">
             <div class="word-card"><div class="ru-word">Север</div><div class="sah-word">Хоту</div><div class="word-desc">сторона света</div></div>
@@ -452,7 +438,6 @@
             <div class="word-card"><div class="ru-word">Мороз</div><div class="sah-word">Тымныы</div><div class="word-desc">суровый холод</div></div>
         </div>
 
-        <!-- игра 3: Сортировка по категориям (животные/природа) -->
         <div class="game-zone" id="gameArctic">
             <div class="game-header"><i class="fas fa-igloo"></i> Игра «Сортировка» (Арктика)</div>
             <div id="arcticGame"></div>
@@ -465,11 +450,12 @@
     </footer>
 </div>
 
-<!-- ========== СКРИПТЫ ТРЁХ РАЗНЫХ ИГР ========== -->
+<!-- ========== СКРИПТЫ ========== -->
 <script>
     (function() {
-        // --------------------------------------------------------------
-        // 1. Игра для 8 марта — классический matching
+        // переключение вкладок не нужно, все игры свои
+        
+        // ---------- ИГРА ДЛЯ 8 МАРТА ----------
         function initMarchGame(containerId, pairs) {
             const container = document.getElementById(containerId);
             if (!container) return;
@@ -483,7 +469,6 @@
 
             const row = document.createElement('div'); row.className = 'match-row';
 
-            // колонка русских
             const colRu = document.createElement('div'); colRu.className = 'match-col';
             colRu.innerHTML = '<h4 style="text-align:center;">🇷🇺 Русский</h4>';
             ruWords.forEach(w => {
@@ -501,7 +486,6 @@
                 };
                 colRu.appendChild(card);
             });
-            // колонка якутских
             const colSah = document.createElement('div'); colSah.className = 'match-col';
             colSah.innerHTML = '<h4 style="text-align:center;">Саха тыла</h4>';
             sahWords.forEach(w => {
@@ -543,65 +527,95 @@
             function showMsg(t) { msgDiv.textContent = t; }
         }
 
-        // --------------------------------------------------------------
-        // 2. Игра для Масленицы — «Четвёртый лишний»
+        // ---------- ИГРА ДЛЯ МАСЛЕНИЦЫ (Четвёртый лишний) - 4 задания, исправлено! ----------
+        // Задания: в первом вместо "чучело" теперь "цветы"
+        const maslenGroups = [
+            { words: ['Блин', 'Масло', 'Солнце', 'Цветы'], odd: 'Цветы', explanation: 'Блин, масло, солнце — символы Масленицы, а цветы больше связаны с 8 марта.' },
+            { words: ['Санки', 'Снежки', 'Хоровод', 'Коньки'], odd: 'Хоровод', explanation: 'Санки, снежки, коньки — зимние забавы, а хоровод — весенний обряд.' },
+            { words: ['Тёща', 'Зять', 'Сестра', 'Свекровь'], odd: 'Свекровь', explanation: 'Тёща, зять, сестра (золовка) — родственники, связанные с масленичными днями, а свекровь — в других обычаях.' },
+            { words: ['Понедельник', 'Среда', 'Пятница', 'Вторник'], odd: 'Пятница', explanation: 'Понедельник, вторник, среда — дни узкой Масленицы, а пятница — уже широкая Масленица.' }
+        ];
+
+        let maslenCurrentGroup = 0;
+        
         function initMaslenGame(containerId, groups) {
             const container = document.getElementById(containerId);
             if (!container) return;
-            container.innerHTML = '';
-
-            let currentGroup = { ...groups[0] }; // начинаем с первой группы
-            let groupIndex = 0;
-            let message = '';
-
+            
             function renderGroup() {
                 container.innerHTML = '';
-                const desc = document.createElement('h3'); 
-                desc.textContent = `Найди лишнее слово (группа ${groupIndex+1}/${groups.length})`;
-                container.appendChild(desc);
-
-                const cardsDiv = document.createElement('div'); cardsDiv.className = 'odd-game';
-                const words = currentGroup.words;
-                const oddWord = currentGroup.odd;
-
-                words.sort(() => Math.random() - 0.5).forEach(w => {
-                    const card = document.createElement('div'); card.className = 'odd-card';
+                const group = groups[maslenCurrentGroup];
+                
+                const title = document.createElement('h3');
+                title.textContent = `Задание ${maslenCurrentGroup + 1} из ${groups.length}`;
+                title.style.marginBottom = '20px';
+                container.appendChild(title);
+                
+                const cardsDiv = document.createElement('div');
+                cardsDiv.className = 'odd-game';
+                
+                const words = [...group.words].sort(() => Math.random() - 0.5);
+                
+                words.forEach(w => {
+                    const card = document.createElement('div');
+                    card.className = 'odd-card';
                     card.textContent = w;
                     card.onclick = () => {
                         if (card.classList.contains('correct-odd') || card.classList.contains('selected-wrong')) return;
-                        if (w === oddWord) {
+                        if (w === group.odd) {
                             card.classList.add('correct-odd');
-                            message = '✅ Правильно! Это лишнее.';
-                            if (groupIndex + 1 < groups.length) {
-                                groupIndex++;
-                                currentGroup = groups[groupIndex];
-                                renderGroup();
-                            } else {
-                                message = '🎉 Поздравляем! Ты прошёл все задания!';
-                                msgDiv.textContent = message;
-                            }
+                            msgDiv.textContent = `✅ Правильно! ${group.explanation}`;
+                            const allCards = document.querySelectorAll(`#${containerId} .odd-card`);
+                            allCards.forEach(c => {
+                                if (!c.classList.contains('correct-odd')) {
+                                    c.onclick = null;
+                                }
+                            });
                         } else {
                             card.classList.add('selected-wrong');
-                            message = '❌ Неверно. Попробуй другое слово.';
+                            msgDiv.textContent = `❌ Неверно. Лишнее слово: "${group.odd}". ${group.explanation}`;
                         }
-                        msgDiv.textContent = message;
                     };
                     cardsDiv.appendChild(card);
                 });
                 container.appendChild(cardsDiv);
-                const msgDiv = document.createElement('div'); msgDiv.className = 'game-message';
+                
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'game-message';
+                msgDiv.id = `${containerId}_msg`;
                 container.appendChild(msgDiv);
-                msgDiv.textContent = message;
-                const resetBtn = document.createElement('button'); resetBtn.className = 'reset-btn';
-                resetBtn.innerHTML = '🔄 Сначала';
-                resetBtn.onclick = () => { groupIndex = 0; currentGroup = groups[0]; renderGroup(); };
+                
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'reset-btn';
+                nextBtn.innerHTML = '<i class="fas fa-forward"></i> Следующее задание';
+                nextBtn.onclick = () => {
+                    if (maslenCurrentGroup + 1 < groups.length) {
+                        maslenCurrentGroup++;
+                        renderGroup();
+                    } else {
+                        const msg = document.getElementById(`${containerId}_msg`);
+                        if (msg) msg.textContent = '🎉 Поздравляем! Ты прошёл все задания!';
+                        nextBtn.disabled = true;
+                        nextBtn.style.opacity = '0.5';
+                    }
+                };
+                container.appendChild(nextBtn);
+                
+                const resetBtn = document.createElement('button');
+                resetBtn.className = 'reset-btn';
+                resetBtn.innerHTML = '<i class="fas fa-undo-alt"></i> Начать заново';
+                resetBtn.style.marginLeft = '15px';
+                resetBtn.onclick = () => {
+                    maslenCurrentGroup = 0;
+                    renderGroup();
+                };
                 container.appendChild(resetBtn);
             }
+            
             renderGroup();
         }
 
-        // --------------------------------------------------------------
-        // 3. Игра для Арктики — сортировка (животные / природа)
+        // ---------- ИГРА ДЛЯ АРКТИКИ (сортировка) ----------
         function initArcticGame(containerId, items) {
             const container = document.getElementById(containerId);
             if (!container) return;
@@ -615,14 +629,11 @@
 
             const grid = document.createElement('div'); grid.className = 'sort-grid';
 
-            // колонка Животные
             const colA = document.createElement('div'); colA.className = 'sort-category';
             colA.innerHTML = '<h4>🐻 Животные</h4><div id="animalsDrop" style="min-height:150px;"></div>';
-            // колонка Природа
             const colN = document.createElement('div'); colN.className = 'sort-category';
             colN.innerHTML = '<h4>❄️ Природа</h4><div id="natureDrop" style="min-height:150px;"></div>';
 
-            // контейнер для слов внизу
             const bankDiv = document.createElement('div'); bankDiv.className = 'odd-game';
             bankDiv.style.marginTop = '30px';
             allWords.forEach(w => {
@@ -635,7 +646,7 @@
                     let targetBox = (cat === 'animal') ? document.getElementById('animalsDrop') : document.getElementById('natureDrop');
                     if (targetBox.childElementCount < (cat==='animal'? animals.length : nature.length)) {
                         card.classList.add('dropped');
-                        targetBox.appendChild(card); // перемещаем
+                        targetBox.appendChild(card);
                         matched++;
                         if (matched === total) msgDiv.textContent = '🎉 Супер! Всё правильно!';
                     } else {
@@ -657,9 +668,8 @@
             container.appendChild(resetBtn);
         }
 
-        // ========== ЗАПУСК ==========
+        // ЗАПУСК
         window.onload = function() {
-            // март
             initMarchGame('marchGame', [
                 { ru: 'Мама', sah: 'Ийэ' },
                 { ru: 'Бабушка', sah: 'Эбээ' },
@@ -668,13 +678,8 @@
                 { ru: 'Красота', sah: 'Кэрэ' }
             ]);
 
-            // масленица (группы для "лишнего")
-            initMaslenGame('maslenGame', [
-                { words: ['Блин', 'Масло', 'Солнце', 'Чучело'], odd: 'Чучело' },
-                { words: ['Снег', 'Санки', 'Хоровод', 'Тюльпан'], odd: 'Тюльпан' }
-            ]);
+            initMaslenGame('maslenGame', maslenGroups);
 
-            // арктика
             initArcticGame('arcticGame', [
                 { word: 'Олень', cat: 'animal' },
                 { word: 'Песец', cat: 'animal' },
